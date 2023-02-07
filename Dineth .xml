@@ -1,0 +1,514 @@
+<rdf:RDF
+xmlns:Virus="http://www.example.com/Virus/Corona.owl#"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+>
+
+<!-- OWL Header -->
+<owl:Ontology rdf:about="http://www.example.com/Virus">
+	<dc:title>Corona Ontology</dc:title>
+	<dc:description>A virus ontology </dc:description>
+</owl:Ontology>
+
+<!-- Define property -->
+<owl:ObjectProperty rdf:about="http://www.example.com/Virus#transmitBy"/>
+<owl:ObjectProperty rdf:about="http://www.example.com/Virus#avoidBy"/>
+<owl:ObjectProperty rdf:about="http://www.example.com/Virus#hasSymptoms"/>
+
+<!-- OWL Class Definition - Corona Type -->
+<owl:Class rdf:about="http://www.example.com/Virus#Corona">
+    <rdfs:label>Corona</rdfs:label>
+    <rdfs:comment>corona types</rdfs:comment>
+</owl:Class>
+
+<!-- OWL Class Definition - Infection Posibility Type -->
+<owl:Class rdf:about="http://www.example.com/Virus#infectionPosibilities">
+    <rdfs:label>Posibilities</rdfs:label>
+    <rdfs:comment>posibilities types</rdfs:comment>
+</owl:Class>
+
+<!-- OWL Class Definition - Method of Precautions -->
+<owl:Class rdf:about="http://www.example.com/Virus#Precautions">
+    <rdfs:label>Precautions</rdfs:label>
+    <rdfs:comment>precautions types</rdfs:comment>
+</owl:Class>
+
+<!-- OWL Class Definition - Type of Symptoms  -->
+<owl:Class rdf:about="http://www.example.com/Virus#Symptoms">
+    <rdfs:label>Symptoms</rdfs:label>
+    <rdfs:comment>symptoms types</rdfs:comment>
+</owl:Class>
+
+
+<!-- OWL SubClass Definition - Covid19 -->
+<owl:Class rdf:about="http://www.example.com/Virus#covid19">
+
+    <!-- Covid19 is a subclassification of Corona -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Corona"/>
+
+    <rdfs:label>Covid19</rdfs:label>
+    <rdfs:comment>covid19 Virus</rdfs:comment>
+
+</owl:Class>
+
+<!-- OWL SubClass Definition - Alpha -->
+<owl:Class rdf:about="http://www.example.com/Virus#alpha">
+
+    <!-- Alpha is a subclassification of Corona -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#covid19"/>
+
+    <rdfs:label>Alpha</rdfs:label>
+    <rdfs:comment>Alpha description</rdfs:comment>
+
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#wind"/>         
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#touch"/>      
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#crowdedPlaces"/> 
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#masks"/>      
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#Isolation"/>   
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#Vaccine"/>    
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#wearGlows"/>   
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#washHands"/>  
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#disinfectSurface"/>
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#fever"/>    
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#cough"/>     
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#headache"/>   
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#vomiting"/>   
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#kidneyFailure"/>
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#pneumonia"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+
+</owl:Class>
+
+<!-- OWL SubClass Definition - Beta -->
+<owl:Class rdf:about="http://www.example.com/Virus#beta">
+
+    <!-- Beta is a subclassification of Corona -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#covid19"/>
+
+    <rdfs:label>Beta</rdfs:label>
+    <rdfs:comment>Beta description</rdfs:comment>
+
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#wind"/>        
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#touch"/>        
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#crowdedPlaces"/> 
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#masks"/>    
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#Isolation"/>   
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#Vaccine"/>    
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#wearGlows"/>    
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#washHands"/>
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#disinfectSurface"/>  
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#fever"/>    
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#cough"/>    
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#headache"/> 
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#vomiting"/>  
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#kidneyFailure"/>
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#pneumonia"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+
+</owl:Class>
+ 
+<!-- OWL SubClass Definition - Gamma -->
+<owl:Class rdf:about="http://www.example.com/Virus#gamma">
+
+    <!-- Gamma is a subclassification of Corona -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#covid19"/>
+
+    <rdfs:label>Gamma</rdfs:label>
+    <rdfs:comment>Gamma description</rdfs:comment>
+
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#wind"/>       
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#touch"/>        
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#crowdedPlaces"/> 
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#masks"/>       
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#Isolation"/>    
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#Vaccine"/>     
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#wearGlows"/>    
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#washHands"/>  
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#disinfectSurface"/> 
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#fever"/>      
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#cough"/>      
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#headache"/>   
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#vomiting"/>  
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#kidneyFailure"/>
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#pneumonia"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+
+</owl:Class>
+
+    
+<!-- OWL SubClass Definition - MERS -->
+<owl:Class rdf:about="http://www.example.com/Virus#mersCov">
+
+    <!-- MERS is a subclassification of Corona -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Corona"/>
+
+    <rdfs:label>MERS</rdfs:label>
+    <rdfs:comment>MERS description</rdfs:comment>
+
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#wind"/>        
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#touch"/>       
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#crowdedPlaces"/>
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#masks"/>   
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#Isolation"/>   
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#Vaccine"/>      
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#wearGlows"/>    
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#washHands"/>  
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#fever"/>   
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#cough"/>  
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#headache"/>   
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#vomiting"/> 
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#kidneyFailure"/>
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#septicShock"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+
+</owl:Class>
+
+
+<!-- OWL SubClass Definition - SARS -->
+<owl:Class rdf:about="http://www.example.com/Virus#sarsCov">
+
+    <!-- SARS is a subclassification of Corona -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Corona"/>
+
+    <rdfs:label>SARS</rdfs:label>
+    <rdfs:comment>SARS description</rdfs:comment>
+
+    <rdfs:subClassOf>
+        <owl:Restriction>
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#wind"/>       
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#touch"/>      
+            <owl:transmitBy rdf:resource="http://www.example.com/Virus#crowdedPlaces"/> 
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#masks"/>      
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#Isolation"/>  
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#Vaccine"/>     
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#wearGlows"/>  
+            <owl:avoidBy rdf:resource="http://www.example.com/Virus#washHands"/>   
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#fever"/>  
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#cough"/>    
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#headache"/>   
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#vomiting"/>  
+            <owl:hasSymptoms rdf:resource="http://www.example.com/Virus#kidneyFailure"/>
+        </owl:Restriction>
+    </rdfs:subClassOf>
+
+</owl:Class>
+
+<!-- OWL SubClass Definition - Wind -->
+<owl:Class rdf:about="http://www.example.com/Virus#wind">
+
+    <!-- Masks is a subclassification of Infection Posibility -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#infectionPosibilities"/>
+
+    <rdfs:label>Wind</rdfs:label>
+    <rdfs:comment>Wind</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Wind class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#wind">
+
+    <!-- Wind is an individual (instance) of the Infection Posibility class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#infectionPosibilities"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Touch -->
+<owl:Class rdf:about="http://www.example.com/Virus#touch">
+
+    <!-- Masks is a subclassification of Infection Posibility -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#infectionPosibilities"/>
+
+    <rdfs:label>Touch</rdfs:label>
+    <rdfs:comment>Touch</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Touch class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#touch">
+
+    <!-- Touch is an individual (instance) of the Infection Posibility class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#infectionPosibilities"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Crowded Places -->
+<owl:Class rdf:about="http://www.example.com/Virus#crowdedPlaces">
+
+    <!-- Masks is a subclassification of Infection Posibility -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#infectionPosibilities"/>
+
+    <rdfs:label>Crowded Places</rdfs:label>
+    <rdfs:comment>Crowded Places</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Crowded Places class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#crowdedPlaces">
+
+    <!-- Crowded Places is an individual (instance) of the Infection Posibility class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#infectionPosibilities"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Masks -->
+<owl:Class rdf:about="http://www.example.com/Virus#masks">
+
+    <!-- Masks is a subclassification of Precautions -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Precautions"/>
+
+    <rdfs:label>Masks</rdfs:label>
+    <rdfs:comment>Masks</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Masks class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#masks">
+
+    <!-- Masks is an individual instance of the Precaution class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#Precautions"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Isolation -->
+<owl:Class rdf:about="http://www.example.com/Virus#Isolation">
+
+    <!-- Isolation is a sub-classification of Precaution Class -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Precautions"/>
+
+    <rdfs:label>Isolation</rdfs:label>
+    <rdfs:comment>Isolation</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Isolation class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#Isolation">
+
+    <!-- Isolation is an individual instance of the Precaution class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#Precautions"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Vaccine -->
+<owl:Class rdf:about="http://www.example.com/Virus#Vaccine">
+
+    <!-- Vaccine is a sub-classification of the Precaution Class -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Precautions"/>
+
+    <rdfs:label>Vaccine</rdfs:label>
+    <rdfs:comment>Vaccine</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Vaccine class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#Vaccine">
+
+    <!-- Vaccine is an individual instance of Precaution class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#Precautions"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Wear Glows -->
+<owl:Class rdf:about="http://www.example.com/Virus#wearGlows">
+
+    <!-- Wear Glows is a sub-classification of the Precaution Class -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Precautions"/>
+
+    <rdfs:label>Wear Glows</rdfs:label>
+    <rdfs:comment>Wear Glows</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Wear Glows class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#wearGlows">
+
+    <!-- Wear Glows is an individual instance of the Precaution class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#Precautions"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Wash Hands -->
+<owl:Class rdf:about="http://www.example.com/Virus#washHands">
+
+    <!-- Wash Hands is a sub-classification of the Precaution class -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Precautions"/>
+
+    <rdfs:label>Wash Hands</rdfs:label>
+    <rdfs:comment>Wash Hands</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Wash Hands class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#washHands">
+
+    <!-- Wash Hands is an individual instance of Precaution class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#Precautions"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Disinfect Surface -->
+<owl:Class rdf:about="http://www.example.com/Virus#disinfectSurface">
+
+    <!-- Disinfect Surface is a sub-classification of the Precaution class -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Precautions"/>
+
+    <rdfs:label>Disinfect Surface</rdfs:label>
+    <rdfs:comment>Disinfect Surface</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Disinfect Surface class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#disinfectSurface">
+
+    <!-- Disinfect Surface is an individual instance of Precaution class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#Precautions"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Fever -->
+<owl:Class rdf:about="http://www.example.com/Virus#fever">
+
+    <!-- Fever is a sub-classification of Symptoms -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+    <rdfs:label>Fever</rdfs:label>
+    <rdfs:comment>Fever</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Fever class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#fever">
+
+    <!-- Fever is an individual instance of Symptoms class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Cough -->
+<owl:Class rdf:about="http://www.example.com/Virus#cough">
+
+    <!-- Cough is a subclassification of Symptoms -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+    <rdfs:label>Cough</rdfs:label>
+    <rdfs:comment>Cough</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Cough class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#cough">
+
+    <!-- Cough is an individual instance of Symptoms class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Headache -->
+<owl:Class rdf:about="http://www.example.com/Virus#headache">
+
+    <!-- Headache is a sub-classification of Symptom -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+    <rdfs:label>Headache</rdfs:label>
+    <rdfs:comment>Headache</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Headache class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#headache">
+
+    <!-- Headache is an individual instance of Symptom class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Vomiting -->
+<owl:Class rdf:about="http://www.example.com/Virus#vomiting">
+
+    <!-- Vomiting is a sub-classification of Symptom class -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+    <rdfs:label>Vomiting</rdfs:label>
+    <rdfs:comment>Vomiting</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Vomiting class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#vomiting">
+
+    <!-- Vomiting is an individual instance of Symptom class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Kidney Failure -->
+<owl:Class rdf:about="http://www.example.com/Virus#kidneyFailure">
+
+    <!-- Kidney Failure is a sub-classification of the Symptom -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+    <rdfs:label>Kidney Failure</rdfs:label>
+    <rdfs:comment>Kidney Failure</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Kidney Failure class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#kidneyFailure">
+
+    <!-- Kidney Failure is an individual instance of Symptom class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Septic Shock -->
+<owl:Class rdf:about="http://www.example.com/Virus#septicShock">
+
+    <!-- Septic Shock is a sub-classification of the Symptom -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+    <rdfs:label>Septic Shock</rdfs:label>
+    <rdfs:comment>Septic Shock</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Septic Shock class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#septicShock">
+
+    <!-- Septic Shock is an individual instance of Symptom class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+</rdf:description>
+
+<!-- OWL SubClass Definition - Pneumonia -->
+<owl:Class rdf:about="http://www.example.com/Virus#pneumonia">
+
+    <!-- Pneumonia is a sub-classification of the Symptom -->
+    <rdfs:subClassOf rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+    <rdfs:label>Pneumonia</rdfs:label>
+    <rdfs:comment>Pneumonia</rdfs:comment>
+
+</owl:Class>
+
+<!-- Define the Pneumonia class instance -->
+<rdf:description rdf:about="http://www.example.com/Virus#pneumonia">
+
+    <!-- pneumonia is an individual instance of Symptom class -->
+    <rdf:type rdf:resource="http://www.example.com/Virus#Symptoms"/>
+
+</rdf:description>
+
+</rdf:RDF>
